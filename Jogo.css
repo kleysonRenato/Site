@@ -109,7 +109,8 @@
             border-radius: 8px;
             margin-bottom: 20px;
             box-shadow: 0 2px 8px var(--sombra-leve);
-            display: none;
+            display: block;
+            margin: 0 auto;
         }
 
         .quiz-options {
