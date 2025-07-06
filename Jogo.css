@@ -109,7 +109,7 @@
             border-radius: 8px;
             margin-bottom: 20px;
             box-shadow: 0 2px 8px var(--sombra-leve);
-            display: none;
+            display: flex;
         }
 
         .quiz-options {
@@ -251,14 +251,6 @@
         footer p {
             margin: 0;
             font-size: 0.9rem;
-        }
-        .quiz-image {
-            display: block;
-            margin: 0 auto 20px;
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px var(--sombra-leve);
         }
         
         @media (max-width: 768px) {
