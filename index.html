@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprenda Conosco - Seu Caminho para o Conhecimento</title>
     <style>
-        /* Estilos CSS */
         :root {
             --cor-primaria: #007BFF;
-            /* Azul */
             --cor-secundaria: #28A745;
-            /* Verde */
             --cor-texto: #333;
             --cor-fundo: #f8f9fa;
             --cor-claro: #fff;
@@ -47,7 +44,6 @@
 
         nav {
             background-color: #343a40;
-            /* Cinza escuro para navegação */
             padding: 1rem 0;
             text-align: center;
             box-shadow: 0 2px 5px var(--sombra-leve);
@@ -60,7 +56,6 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            /* Permite que os itens quebrem a linha em telas pequenas */
         }
 
         nav ul li {
@@ -83,7 +78,6 @@
 
         .hero {
             background: linear-gradient(to right, var(--cor-primaria), #6c757d);
-            /* Gradiente de azul para cinza */
             color: var(--cor-claro);
             text-align: center;
             padding: 4rem 20px;
@@ -115,7 +109,6 @@
 
         .cta-button:hover {
             background-color: #218838;
-            /* Verde mais escuro */
             transform: translateY(-3px);
         }
 
@@ -126,7 +119,6 @@
             display: flex;
             flex-wrap: wrap;
             gap: 25px;
-            /* Espaço entre os cards */
             justify-content: center;
         }
 
@@ -136,11 +128,8 @@
             box-shadow: 0 4px 10px var(--sombra-leve);
             padding: 25px;
             flex: 1;
-            /* Permite que os cards cresçam e encolham */
             min-width: 280px;
-            /* Largura mínima para o card */
             max-width: 380px;
-            /* Largura máxima para controle */
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -262,7 +251,6 @@
     <nav>
         <ul>
             <li><a href="#inicio">Início</a></li>
-            <li><a href="jogo.html">Jogos</a></li>
             <li><a href="sobrenos.html">Sobre Nós</a></li>
         </ul>
     </nav>
@@ -271,7 +259,7 @@
         <section id="inicio" class="hero">
             <h2>Transforme seu Futuro com o Aprendizado</h2>
             <p>Descubra com um jogo interativo, todos os perigos que rondam a internet</p>
-            <a href="#cursos" class="cta-button">Comece</a>
+            <a href="jogo.html" class="cta-button">Comece</a>
         </section>
 
         <section id="cursos" class="container">
@@ -304,9 +292,9 @@
                 <p>Tem dúvidas ou sugestões? Adoraríamos ouvir você!</p>
                 <p>Email: kleysonwork@hotmail.com</p>
                 <p>Siga-nos nas redes sociais!</p>
-                <icon class="icon"><i class="bi bi-envelope"></i></icon>
-                <icon class="icon"><i class="bi bi-instagram"></i></icon>
+                <i class="bi bi-envelope"></i><i class="bi bi-instagram">
                 <icon class="icon">🌐</icon>
+                
             </div>
         </section>
     </main>
