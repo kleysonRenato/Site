@@ -13,7 +13,7 @@
                 correctAnswer: "A mensagem 'Urgent Security Update' e o pedido de login em uma URL suspeita."
             },
             {
-                image: '',
+                image: 'https://github.com/kleysonRenato/Site/blob/main/pastaimagens/imagens%20de%20phishing/imagemphishing.jpg?raw=true',
                 question: "O que é phishing?",
                 options: [
                     "Um tipo de ataque cibernético que tenta enganar vítimas para obter informações confidenciais.",
