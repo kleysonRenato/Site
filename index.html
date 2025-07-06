@@ -1,23 +1,316 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Aprenda Conosco - Seu Caminho para o Conhecimento</title>
+    <style>
+        /* Estilos CSS */
+        :root {
+            --cor-primaria: #007BFF; /* Azul */
+            --cor-secundaria: #28A745; /* Verde */
+            --cor-texto: #333;
+            --cor-fundo: #f8f9fa;
+            --cor-claro: #fff;
+            --sombra-leve: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--cor-primaria);
+            color: var(--cor-claro);
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px var(--sombra-leve);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        nav {
+            background-color: #343a40; /* Cinza escuro para navegação */
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px var(--sombra-leve);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas pequenas */
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--cor-claro);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--cor-primaria);
+        }
+
+        .hero {
+            background: linear-gradient(to right, var(--cor-primaria), #6c757d); /* Gradiente de azul para cinza */
+            color: var(--cor-claro);
+            text-align: center;
+            padding: 4rem 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--cor-secundaria);
+            color: var(--cor-claro);
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px var(--sombra-leve);
+        }
+
+        .cta-button:hover {
+            background-color: #218838; /* Verde mais escuro */
+            transform: translateY(-3px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px; /* Espaço entre os cards */
+            justify-content: center;
+        }
+
+        .card {
+            background-color: var(--cor-claro);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px var(--sombra-leve);
+            padding: 25px;
+            flex: 1; /* Permite que os cards cresçam e encolham */
+            min-width: 280px; /* Largura mínima para o card */
+            max-width: 380px; /* Largura máxima para controle */
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px var(--sombra-leve);
+        }
+
+        .card h3 {
+            color: var(--cor-primaria);
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .card .icon {
+            font-size: 3rem;
+            color: var(--cor-secundaria);
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: var(--cor-texto);
+            color: var(--cor-claro);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Animação */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column; /* Itens do menu empilhados */
+                gap: 10px;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+
+            .container {
+                flex-direction: column; /* Cards empilhados */
+                align-items: center;
+                padding: 0 15px;
+            }
+
+            .card {
+                max-width: 90%; /* Ocupa mais largura em telas pequenas */
+                margin-bottom: 20px; /* Espaço entre os cards empilhados */
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+                padding: 6px 10px;
+            }
+
+            .hero {
+                padding: 3rem 15px;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>asssssssssss!</h1>
-    <p>Este é um exemplo de documento HTML.</p>
-    <script>
-        console.log("sssssssssssss!");
-    </script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;     
-        }
-    <
+    <header>
+        <h1>Aprenda Conosco</h1>
+        <p>Seu Caminho para o Conhecimento Contínuo</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="inicio" class="hero">
+            <h2>Transforme seu Futuro com o Aprendizado</h2>
+            <p>Descubra uma vasta gama de cursos e recursos projetados para impulsionar sua carreira e seu desenvolvimento pessoal. Comece sua jornada hoje!</p>
+            <a href="#cursos" class="cta-button">Ver Cursos Agora</a>
+        </section>
+
+        <section id="cursos" class="container">
+            <div class="card">
+                <div class="icon">💡</div>
+                <h3>Desenvolvimento Web</h3>
+                <p>Aprenda a construir sites e aplicações incríveis do zero ao avançado, com as tecnologias mais recentes.</p>
+            </div>
+            <div class="card">
+                <div class="icon">📊</div>
+                <h3>Análise de Dados</h3>
+                <p>Domine a arte de extrair insights valiosos de dados e tome decisões mais inteligentes para seu negócio.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🎨</div>
+                <h3>Design Gráfico</h3>
+                <p>Explore sua criatividade e aprenda a criar designs visuais impactantes para diversas plataformas.</p>
+            </div>
+            <div class="card">
+                <div class="icon">📈</div>
+                <h3>Marketing Digital</h3>
+                <p>Conquiste o mundo online com estratégias de marketing digital eficazes e alcance seu público-alvo.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🗣️</div>
+                <h3>Idiomas</h3>
+                <p>Aprenda novos idiomas com métodos práticos e imersivos, abrindo portas para novas culturas e oportunidades.</p>
+            </div>
+            <div class="card">
+                <div class="icon">💻</div>
+                <h3>Programação</h3>
+                <p>Do básico ao avançado, aprenda as linguagens de programação mais requisitadas do mercado e construa seu futuro.</p>
+            </div>
+        </section>
+
+        <section id="sobre" class="container">
+            <div class="card" style="flex: 1 1 100%;">
+                <h3>Sobre Nós</h3>
+                <p>No "Aprenda Conosco", acreditamos que o conhecimento é a chave para o progresso. Nossa missão é democratizar o acesso à educação de qualidade, oferecendo cursos práticos e acessíveis, ministrados por especialistas. Nosso objetivo é capacitar indivíduos a alcançar seu pleno potencial, fornecendo as ferramentas e o suporte necessários para o sucesso em um mundo em constante mudança.</p>
+            </div>
+        </section>
+
+        <section id="contato" class="container">
+            <div class="card" style="flex: 1 1 100%;">
+                <h3>Entre em Contato</h3>
+                <p>Tem dúvidas ou sugestões? Adoraríamos ouvir você!</p>
+                <p>Email: contato@aprendaconosco.com.br</p>
+                <p>Telefone: (XX) XXXX-XXXX</p>
+                <p>Siga-nos nas redes sociais!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Aprenda Conosco. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
