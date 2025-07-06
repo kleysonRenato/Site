@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Phishing - Aprenda Conosco</title>
     <style>
         :root {
-            --cor-primaria: #007BFF; 
-            --cor-secundaria: #28A745; 
-            --cor-erro: #DC3545; 
+            --cor-primaria: #007BFF;
+            --cor-secundaria: #28A745;
+            --cor-erro: #DC3545;
             --cor-texto: #333;
             --cor-fundo: #f8f9fa;
             --cor-claro: #fff;
@@ -46,7 +47,7 @@
         }
 
         nav {
-            background-color: #343a40; 
+            background-color: #343a40;
             padding: 1rem 0;
             text-align: center;
             box-shadow: 0 2px 5px var(--sombra-leve);
@@ -80,7 +81,7 @@
         }
 
         .quiz-container {
-            flex-grow: 1; 
+            flex-grow: 1;
             max-width: 800px;
             margin: 30px auto;
             padding: 30px;
@@ -103,7 +104,7 @@
             font-size: 1.8rem;
             color: var(--cor-primaria);
             margin-bottom: 25px;
-            min-height: 80px; 
+            min-height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -116,7 +117,7 @@
             border-radius: 8px;
             margin-bottom: 20px;
             box-shadow: 0 2px 8px var(--sombra-leve);
-            display: none; 
+            display: none;
         }
 
         .quiz-options {
@@ -136,12 +137,12 @@
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-            text-align: left; 
+            text-align: left;
             box-shadow: 0 2px 5px var(--sombra-leve);
         }
 
         .option-button:hover:not(.disabled) {
-            background-color: #dee2e6; 
+            background-color: #dee2e6;
             transform: translateY(-2px);
         }
 
@@ -169,7 +170,7 @@
             font-weight: bold;
             margin-top: -15px;
             margin-bottom: 20px;
-            min-height: 25px; 
+            min-height: 25px;
         }
 
         .quiz-feedback.acerto {
@@ -215,7 +216,7 @@
         }
 
         .quiz-end-screen {
-            display: none; 
+            display: none;
             text-align: center;
         }
 
@@ -252,7 +253,7 @@
             color: var(--cor-claro);
             text-align: center;
             padding: 2rem 0;
-            margin-top: auto; 
+            margin-top: auto;
         }
 
         footer p {
@@ -264,41 +265,52 @@
             header h1 {
                 font-size: 2rem;
             }
+
             nav ul {
                 flex-direction: column;
                 gap: 10px;
             }
+
             nav ul li {
                 margin: 0;
             }
+
             .quiz-container {
                 margin: 20px 15px;
                 padding: 20px;
             }
+
             .quiz-question {
                 font-size: 1.4rem;
             }
-            .quiz-image { 
+
+            .quiz-image {
                 max-height: 200px;
                 object-fit: contain;
             }
+
             .option-button {
                 font-size: 1rem;
                 padding: 12px 15px;
             }
+
             #score {
                 font-size: 1.2rem;
             }
+
             #next-button {
                 padding: 10px 20px;
                 font-size: 1rem;
             }
+
             .quiz-end-screen h3 {
                 font-size: 1.6rem;
             }
+
             .quiz-end-screen p {
                 font-size: 1.1rem;
             }
+
             #restart-button {
                 padding: 12px 25px;
                 font-size: 1.1rem;
@@ -309,13 +321,16 @@
             header h1 {
                 font-size: 1.8rem;
             }
+
             nav ul li a {
                 font-size: 0.9rem;
                 padding: 6px 10px;
             }
+
             .quiz-question {
                 font-size: 1.2rem;
             }
+
             .option-button {
                 font-size: 0.9rem;
                 padding: 10px 12px;
@@ -323,6 +338,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Quiz Interativo</h1>
@@ -332,7 +348,7 @@
     <nav>
         <ul>
             <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="sobrenos.html">Sobre Nós</a></li>
         </ul>
     </nav>
 
@@ -347,7 +363,7 @@
                 <h2 id="question-text" class="quiz-question"></h2>
 
                 <div id="options-container" class="quiz-options">
-                    </div>
+                </div>
 
                 <div id="feedback-message" class="quiz-feedback"></div>
 
@@ -370,6 +386,20 @@
     </footer>
 
     <script>
+        {
+            image: 'https://github.com/kleysonRenato/Site/blob/main/imagens%20de%20phishing/imagensquiz1.png.png?raw=true' 
+            question: "Nova pergunta com imagem local.",
+                options: [
+                    "Opção 1",
+                    "Opção 2",
+                    "Opção 3",
+                    "Opção 4",
+                    "Opção 5"
+                ],
+                    correctAnswer: "Resposta correta.",
+                        
+        },
+
         const questions = [
             {
                 question: "O que é phishing?",
@@ -393,7 +423,7 @@
                     "A opção 'NOW WOW'."
                 ],
                 correctAnswer: "A mensagem 'Urgent Security Update' e o pedido de login em uma URL suspeita.",
-                image: 'https://www.ctt.pt/transversais/alertas-de-phishing/images/ctt-phishing-1.jpg' 
+                image: 'https://www.ctt.pt/transversais/alertas-de-phishing/images/ctt-phishing-1.jpg'
             },
             {
                 question: "Qual característica é um sinal comum de um e-mail de phishing?",
@@ -588,9 +618,9 @@
         function loadQuestion() {
             answeredThisQuestion = false;
             nextButton.classList.add('hidden');
-            feedbackMessage.textContent = ''; 
-            feedbackMessage.classList.remove('acerto', 'erro'); 
-            optionsContainer.innerHTML = ''; 
+            feedbackMessage.textContent = '';
+            feedbackMessage.classList.remove('acerto', 'erro');
+            optionsContainer.innerHTML = '';
 
             if (currentQuestionIndex < questions.length) {
                 const currentQuestion = questions[currentQuestionIndex];
@@ -599,10 +629,10 @@
 
                 if (currentQuestion.image) {
                     questionImageElement.src = currentQuestion.image;
-                    questionImageElement.classList.remove('hidden'); 
+                    questionImageElement.classList.remove('hidden');
                 } else {
-                    questionImageElement.classList.add('hidden'); 
-                    questionImageElement.src = ''; 
+                    questionImageElement.classList.add('hidden');
+                    questionImageElement.src = '';
                 }
 
                 currentQuestion.options.forEach(option => {
@@ -618,12 +648,12 @@
         }
 
         function selectOption(selectedButton, selectedAnswer, correctAnswer) {
-            if (answeredThisQuestion) return; 
+            if (answeredThisQuestion) return;
             answeredThisQuestion = true;
 
             const allOptionButtons = optionsContainer.querySelectorAll('.option-button');
             allOptionButtons.forEach(button => {
-                button.classList.add('disabled'); 
+                button.classList.add('disabled');
                 if (button.textContent === correctAnswer) {
                     button.classList.add('correct');
                 } else if (button === selectedButton) {
@@ -642,7 +672,7 @@
                 feedbackMessage.classList.add('erro');
             }
             scoreElement.textContent = `Pontuação: ${score}`;
-            nextButton.classList.remove('hidden'); 
+            nextButton.classList.remove('hidden');
         }
 
         function showEndScreen() {
@@ -670,4 +700,5 @@
         loadQuestion();
     </script>
 </body>
+
 </html>
