@@ -13,7 +13,7 @@
                 correctAnswer: "A mensagem 'Urgent Security Update' e o pedido de login em uma URL suspeita."
             },
             {
-                 image: 'https://github.com/kleysonRenato/Site/blob/main/pastaimagens/imagens%20de%20phishing/imagemphishing.jpg?raw=true',
+                image: 'https://github.com/kleysonRenato/Site/blob/main/pastaimagens/imagens%20de%20phishing/imagemphishing.jpg?raw=true',
                 question: "O que é phishing?",
                 options: [
                     "Um tipo de ataque cibernético que tenta enganar vítimas para obter informações confidenciais.",
@@ -25,6 +25,7 @@
                 correctAnswer: "Um tipo de ataque cibernético que tenta enganar vítimas para obter informações confidenciais.",
             },
             {
+                image: 'https://github.com/kleysonRenato/Site/blob/main/pastaimagens/imagens%20de%20phishing/imagemphishing.jpg?raw=true',
                 question: "Qual característica é um sinal comum de um e-mail de phishing?",
                 options: [
                     "Gramática e ortografia perfeitas.",
@@ -34,7 +35,6 @@
                     "Links que levam diretamente para o site oficial."
                 ],
                 correctAnswer: "Solicitação urgente de informações pessoais ou financeiras.",
-                image: null
             },
             {
                 question: "Você recebe um e-mail do 'Banco X' pedindo para clicar em um link para 'atualizar seus dados de segurança'. O que você deve fazer?",
