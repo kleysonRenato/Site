@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Aprenda Conosco</title>
+    <style>
+        :root {
+            --cor-primaria: #007BFF; /* Azul */
+            --cor-secundaria: #28A745; /* Verde */
+            --cor-texto: #333;
+            --cor-fundo: #f8f9fa;
+            --cor-claro: #fff;
+            --sombra-leve: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--cor-primaria);
+            color: var(--cor-claro);
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px var(--sombra-leve);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        nav {
+            background-color: #343a40; /* Cinza escuro para navegação */
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px var(--sombra-leve);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--cor-claro);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--cor-primaria);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: var(--cor-claro);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px var(--sombra-leve);
+            padding: 25px;
+            flex: 1;
+            min-width: 280px;
+            max-width: 500px; /* Mais largo para o perfil do desenvolvedor */
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px var(--sombra-leve);
+        }
+
+        .card h3 {
+            color: var(--cor-primaria);
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .dev-profile {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .dev-profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Imagem circular */
+            object-fit: cover; /* Garante que a imagem preencha o círculo */
+            margin-bottom: 15px;
+            border: 3px solid var(--cor-primaria);
+            box-shadow: 0 2px 5px var(--sombra-leve);
+        }
+
+        .dev-profile h4 {
+            color: var(--cor-secundaria);
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .dev-profile p {
+            font-size: 0.95rem;
+            color: #666;
+            text-align: justify; /* Justifica o texto para melhor leitura */
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: var(--cor-texto);
+            color: var(--cor-claro);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+
+            .container {
+                flex-direction: column;
+                align-items: center;
+                padding: 0 15px;
+            }
+
+            .card {
+                max-width: 90%;
+                margin-bottom: 20px;
+            }
+
+            .dev-profile img {
+                width: 120px;
+                height: 120px;
+            }
+            .dev-profile h4 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+                padding: 6px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aprenda Conosco</h1>
+        <p>Seu Caminho para o Conhecimento Contínuo</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html#cursos">Cursos</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="container">
+            <div class="card" style="flex: 1 1 100%;">
+                <h3>Nossa Equipe de Desenvolvimento</h3>
+                <p>Conheça as mentes por trás da plataforma "Aprenda Conosco", dedicadas a construir a melhor experiência de aprendizado para você.</p>
+            </div>
+
+            <div class="card dev-profile">
+                <img src="https://via.placeholder.com/150/007BFF/FFFFFF?text=Dev1" alt="Foto de Desenvolvedor 1">
+                <h4>João Silva</h4>
+                <p>João é um engenheiro de software apaixonado por educação e tecnologia. Com mais de 8 anos de experiência em desenvolvimento front-end e back-end, ele é o arquiteto principal da nossa plataforma. Sua expertise em usabilidade e desempenho garante que o site seja rápido, intuitivo e acessível a todos os usuários. João acredita que a tecnologia pode quebrar barreiras no aprendizado e está empenhado em construir ferramentas que inspirem a próxima geração de estudantes.</p>
+            </div>
+
+            <div class="card dev-profile">
+                <img src="https://via.placeholder.com/150/28A745/FFFFFF?text=Dev2" alt="Foto de Desenvolvedor 2">
+                <h4>Maria Souza</h4>
+                <p>Maria é uma designer de UX/UI com um olho aguçado para detalhes e uma paixão por criar interfaces bonitas e funcionais. Ela é responsável por toda a experiência visual e interativa do site, garantindo que o design seja convidativo e fácil de usar. Com formação em design gráfico e experiência em plataformas de e-learning, Maria foca em tornar o processo de aprendizado não apenas eficaz, mas também visualmente agradável e envolvente.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Aprenda Conosco. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
