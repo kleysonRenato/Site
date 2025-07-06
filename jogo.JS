@@ -23,7 +23,6 @@
                     "Um método para acelerar a conexão com a internet."
                 ],
                 correctAnswer: "Um tipo de ataque cibernético que tenta enganar vítimas para obter informações confidenciais.",
-                image: null
             },
             {
                 question: "Qual característica é um sinal comum de um e-mail de phishing?",
