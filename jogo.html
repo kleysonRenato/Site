@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Phishing - Aprenda Conosco</title>
     <style>
-        /* Estilos CSS - Combinando com o tema do site */
         :root {
-            --cor-primaria: #007BFF; /* Azul */
-            --cor-secundaria: #28A745; /* Verde */
-            --cor-erro: #DC3545; /* Vermelho */
+            --cor-primaria: #007BFF; 
+            --cor-secundaria: #28A745; 
+            --cor-erro: #DC3545; 
             --cor-texto: #333;
             --cor-fundo: #f8f9fa;
             --cor-claro: #fff;
@@ -25,7 +24,7 @@
             line-height: 1.6;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Garante que o footer fique no final */
+            min-height: 100vh;
         }
 
         header {
@@ -47,7 +46,7 @@
         }
 
         nav {
-            background-color: #343a40; /* Cinza escuro para navegação */
+            background-color: #343a40; 
             padding: 1rem 0;
             text-align: center;
             box-shadow: 0 2px 5px var(--sombra-leve);
@@ -80,9 +79,8 @@
             background-color: var(--cor-primaria);
         }
 
-        /* Estilos específicos do Quiz */
         .quiz-container {
-            flex-grow: 1; /* Faz o container crescer para empurrar o footer */
+            flex-grow: 1; 
             max-width: 800px;
             margin: 30px auto;
             padding: 30px;
@@ -105,7 +103,7 @@
             font-size: 1.8rem;
             color: var(--cor-primaria);
             margin-bottom: 25px;
-            min-height: 80px; /* Garante espaço para a pergunta */
+            min-height: 80px; 
             display: flex;
             align-items: center;
             justify-content: center;
@@ -118,7 +116,7 @@
             border-radius: 8px;
             margin-bottom: 20px;
             box-shadow: 0 2px 8px var(--sombra-leve);
-            display: none; /* Inicia oculto, será exibido pelo JS */
+            display: none; 
         }
 
         .quiz-options {
@@ -130,7 +128,7 @@
         }
 
         .option-button {
-            background-color: #e9ecef; /* Cinza claro */
+            background-color: #e9ecef;
             color: var(--cor-texto);
             border: none;
             padding: 15px 20px;
@@ -138,12 +136,12 @@
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-            text-align: left; /* Alinha o texto das opções à esquerda */
+            text-align: left; 
             box-shadow: 0 2px 5px var(--sombra-leve);
         }
 
         .option-button:hover:not(.disabled) {
-            background-color: #dee2e6; /* Cinza um pouco mais escuro */
+            background-color: #dee2e6; 
             transform: translateY(-2px);
         }
 
@@ -169,9 +167,9 @@
         .quiz-feedback {
             font-size: 1.2rem;
             font-weight: bold;
-            margin-top: -15px; /* Ajusta a margem para mais perto das opções */
+            margin-top: -15px;
             margin-bottom: 20px;
-            min-height: 25px; /* Garante espaço para o feedback */
+            min-height: 25px; 
         }
 
         .quiz-feedback.acerto {
@@ -208,7 +206,7 @@
         }
 
         #next-button:hover {
-            background-color: #0056b3; /* Azul mais escuro */
+            background-color: #0056b3;
             transform: translateY(-2px);
         }
 
@@ -217,7 +215,7 @@
         }
 
         .quiz-end-screen {
-            display: none; /* Escondido por padrão */
+            display: none; 
             text-align: center;
         }
 
@@ -254,7 +252,7 @@
             color: var(--cor-claro);
             text-align: center;
             padding: 2rem 0;
-            margin-top: auto; /* Empurra o footer para o final */
+            margin-top: auto; 
         }
 
         footer p {
@@ -262,7 +260,6 @@
             font-size: 0.9rem;
         }
 
-        /* Responsividade */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2rem;
@@ -281,7 +278,7 @@
             .quiz-question {
                 font-size: 1.4rem;
             }
-            .quiz-image { /* Ajuste para imagem em telas menores */
+            .quiz-image { 
                 max-height: 200px;
                 object-fit: contain;
             }
@@ -335,10 +332,7 @@
     <nav>
         <ul>
             <li><a href="index.html">Início</a></li>
-            <li><a href="index.html#cursos">Cursos</a></li>
             <li><a href="sobre.html">Sobre Nós</a></li>
-            <li><a href="index.html#contato">Contato</a></li>
-            <li><a href="quiz-phishing.html">Jogar Quiz</a></li>
         </ul>
     </nav>
 
@@ -376,7 +370,6 @@
     </footer>
 
     <script>
-        // JavaScript do Quiz
         const questions = [
             {
                 question: "O que é phishing?",
@@ -400,7 +393,7 @@
                     "A opção 'NOW WOW'."
                 ],
                 correctAnswer: "A mensagem 'Urgent Security Update' e o pedido de login em uma URL suspeita.",
-                image: 'https://vscode.dev/github.com/kleysonRenato/Site/blob/main/imagens%20de%20phishing/imagensquiz1.png.png#L404' 
+                image: 'https://www.ctt.pt/transversais/alertas-de-phishing/images/ctt-phishing-1.jpg' 
             },
             {
                 question: "Qual característica é um sinal comum de um e-mail de phishing?",
@@ -574,7 +567,7 @@
 
         let currentQuestionIndex = 0;
         let score = 0;
-        let answeredThisQuestion = false; // Para evitar múltiplos cliques
+        let answeredThisQuestion = false;
 
         const questionTextElement = document.getElementById('question-text');
         const optionsContainer = document.getElementById('options-container');
@@ -588,30 +581,28 @@
         const finalScoreElement = document.getElementById('final-score');
         const maxScoreElement = document.getElementById('max-score');
         const restartButton = document.getElementById('restart-button');
-        const questionImageElement = document.getElementById('question-image'); // AGORA CORRETO
-
+        const questionImageElement = document.getElementById('question-image');
         totalQuestionsElement.textContent = questions.length;
         maxScoreElement.textContent = questions.length;
 
         function loadQuestion() {
             answeredThisQuestion = false;
-            nextButton.classList.add('hidden'); // Esconde o botão "Próxima Pergunta"
-            feedbackMessage.textContent = ''; // Limpa a mensagem de feedback
-            feedbackMessage.classList.remove('acerto', 'erro'); // Remove classes de feedback anteriores
-            optionsContainer.innerHTML = ''; // Limpa as opções anteriores
+            nextButton.classList.add('hidden');
+            feedbackMessage.textContent = ''; 
+            feedbackMessage.classList.remove('acerto', 'erro'); 
+            optionsContainer.innerHTML = ''; 
 
             if (currentQuestionIndex < questions.length) {
                 const currentQuestion = questions[currentQuestionIndex];
                 currentQuestionNumberElement.textContent = currentQuestionIndex + 1;
                 questionTextElement.textContent = currentQuestion.question;
 
-                // Lógica para imagem (AGORA DESCOMENTADA E CORRIGIDA)
                 if (currentQuestion.image) {
                     questionImageElement.src = currentQuestion.image;
-                    questionImageElement.classList.remove('hidden'); // Mostra a imagem
+                    questionImageElement.classList.remove('hidden'); 
                 } else {
-                    questionImageElement.classList.add('hidden'); // Esconde a imagem se não houver
-                    questionImageElement.src = ''; // Limpa a fonte da imagem
+                    questionImageElement.classList.add('hidden'); 
+                    questionImageElement.src = ''; 
                 }
 
                 currentQuestion.options.forEach(option => {
@@ -627,12 +618,12 @@
         }
 
         function selectOption(selectedButton, selectedAnswer, correctAnswer) {
-            if (answeredThisQuestion) return; // Evita múltiplos cliques
+            if (answeredThisQuestion) return; 
             answeredThisQuestion = true;
 
             const allOptionButtons = optionsContainer.querySelectorAll('.option-button');
             allOptionButtons.forEach(button => {
-                button.classList.add('disabled'); // Desabilita todos os botões após a seleção
+                button.classList.add('disabled'); 
                 if (button.textContent === correctAnswer) {
                     button.classList.add('correct');
                 } else if (button === selectedButton) {
@@ -651,7 +642,7 @@
                 feedbackMessage.classList.add('erro');
             }
             scoreElement.textContent = `Pontuação: ${score}`;
-            nextButton.classList.remove('hidden'); // Mostra o botão "Próxima Pergunta"
+            nextButton.classList.remove('hidden'); 
         }
 
         function showEndScreen() {
@@ -669,7 +660,6 @@
             loadQuestion();
         }
 
-        // Event Listeners
         nextButton.addEventListener('click', () => {
             currentQuestionIndex++;
             loadQuestion();
@@ -677,7 +667,6 @@
 
         restartButton.addEventListener('click', restartQuiz);
 
-        // Inicia o quiz ao carregar a página
         loadQuestion();
     </script>
 </body>
