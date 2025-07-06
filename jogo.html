@@ -118,6 +118,7 @@
             border-radius: 8px;
             margin-bottom: 20px;
             box-shadow: 0 2px 8px var(--sombra-leve);
+            display: none; /* Inicia oculto, será exibido pelo JS */
         }
 
         .quiz-options {
@@ -280,6 +281,10 @@
             .quiz-question {
                 font-size: 1.4rem;
             }
+            .quiz-image { /* Ajuste para imagem em telas menores */
+                max-height: 200px;
+                object-fit: contain;
+            }
             .option-button {
                 font-size: 1rem;
                 padding: 12px 15px;
@@ -330,7 +335,11 @@
     <nav>
         <ul>
             <li><a href="index.html">Início</a></li>
+            <li><a href="index.html#cursos">Cursos</a></li>
             <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+            <li><a href="quiz-phishing.html">Jogar Quiz</a></li>
+        </ul>
     </nav>
 
     <main>
@@ -339,6 +348,8 @@
                 <div class="quiz-header">
                     <p>Pergunta <span id="current-question-number">1</span> de <span id="total-questions">15</span></p>
                 </div>
+                <img id="question-image" src="" alt="Imagem da pergunta" class="quiz-image">
+
                 <h2 id="question-text" class="quiz-question"></h2>
 
                 <div id="options-container" class="quiz-options">
@@ -378,6 +389,19 @@
                 ],
                 correctAnswer: "Um tipo de ataque cibernético que tenta enganar vítimas para obter informações confidenciais.",
                 image: null // Caminho para a imagem, ex: 'img/phishing-email.png'
+            },
+            {
+                // PERGUNTA COM A IMAGEM GERADA
+                question: "Esta imagem representa um cenário comum em ataques de phishing. Qual elemento dela indica ser uma tentativa de golpe?",
+                options: [
+                    "A presença do logo do banco, indicando legitimidade.",
+                    "A mensagem 'Urgent Security Update' e o pedido de login em uma URL suspeita.",
+                    "O design moderno da página de login.",
+                    "O cadeado na barra de endereço (embora não esteja visível na imagem completa).",
+                    "A opção 'NOW WOW'."
+                ],
+                correctAnswer: "A mensagem 'Urgent Security Update' e o pedido de login em uma URL suspeita.",
+                image: 'http://googleusercontent.com/image_generation_content/0' // A URL da imagem que geramos!
             },
             {
                 question: "Qual característica é um sinal comum de um e-mail de phishing?",
@@ -565,7 +589,7 @@
         const finalScoreElement = document.getElementById('final-score');
         const maxScoreElement = document.getElementById('max-score');
         const restartButton = document.getElementById('restart-button');
-        // const questionImageElement = document.getElementById('question-image'); // Descomentar se for usar imagens
+        const questionImageElement = document.getElementById('question-image'); // AGORA CORRETO
 
         totalQuestionsElement.textContent = questions.length;
         maxScoreElement.textContent = questions.length;
@@ -574,6 +598,7 @@
             answeredThisQuestion = false;
             nextButton.classList.add('hidden'); // Esconde o botão "Próxima Pergunta"
             feedbackMessage.textContent = ''; // Limpa a mensagem de feedback
+            feedbackMessage.classList.remove('acerto', 'erro'); // Remove classes de feedback anteriores
             optionsContainer.innerHTML = ''; // Limpa as opções anteriores
 
             if (currentQuestionIndex < questions.length) {
@@ -581,15 +606,14 @@
                 currentQuestionNumberElement.textContent = currentQuestionIndex + 1;
                 questionTextElement.textContent = currentQuestion.question;
 
-                // Lógica para imagem (descomente e ajuste se for usar)
-                // if (currentQuestion.image) {
-                //     questionImageElement.src = currentQuestion.image;
-                //     questionImageElement.classList.remove('hidden');
-                // } else {
-                //     questionImageElement.classList.add('hidden');
-                //     questionImageElement.src = ''; // Limpa a imagem
-                // }
-
+                // Lógica para imagem (AGORA DESCOMENTADA E CORRIGIDA)
+                if (currentQuestion.image) {
+                    questionImageElement.src = currentQuestion.image;
+                    questionImageElement.classList.remove('hidden'); // Mostra a imagem
+                } else {
+                    questionImageElement.classList.add('hidden'); // Esconde a imagem se não houver
+                    questionImageElement.src = ''; // Limpa a fonte da imagem
+                }
 
                 currentQuestion.options.forEach(option => {
                     const button = document.createElement('button');
