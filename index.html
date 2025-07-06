@@ -7,6 +7,9 @@
     <link rel="icon" href="pastaimagens/imagens de phishing/fotomago2.png" type="image/png">
 
     <title>Aprenda Conosco - Seu Caminho para o Conhecimento</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <style>
         :root {
             --cor-primaria: #007BFF;
@@ -15,6 +18,7 @@
             --cor-fundo: #f8f9fa;
             --cor-claro: #fff;
             --sombra-leve: rgba(0, 0, 0, 0.1);
+            --sombra-media: rgba(0, 0, 0, 0.15);
         }
 
         body {
@@ -24,6 +28,9 @@
             background-color: var(--cor-fundo);
             color: var(--cor-texto);
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
@@ -38,6 +45,7 @@
             font-family: 'Times New Roman', Times, serif;
             margin: 0;
             font-size: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         header p {
@@ -59,10 +67,11 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            gap: 20px;
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 0;
         }
 
         nav ul li a {
@@ -79,17 +88,23 @@
             background-color: var(--cor-primaria);
         }
 
+        main {
+            flex-grow: 1;
+        }
+
         .hero {
             background: linear-gradient(to right, var(--cor-primaria), #6c757d);
             color: var(--cor-claro);
             text-align: center;
             padding: 4rem 20px;
             animation: fadeIn 1s ease-out;
+            margin-bottom: 30px;
         }
 
         .hero h2 {
             font-size: 3rem;
             margin-bottom: 15px;
+            color: var(--cor-claro);
         }
 
         .hero p {
@@ -152,12 +167,51 @@
         .card p {
             font-size: 1rem;
             color: #555;
+            margin-bottom: 15px;
         }
 
         .card .icon {
             font-size: 3rem;
             color: var(--cor-secundaria);
             margin-bottom: 15px;
+            display: block;
+        }
+
+        #contato .card {
+            flex: 1 1 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        #contato h3 {
+            color: var(--cor-primaria);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        #contato p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-icons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .contact-icons a {
+            color: var(--cor-texto);
+            font-size: 2.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .contact-icons a:hover {
+            color: var(--cor-primaria);
+            transform: translateY(-4px);
         }
 
         footer {
@@ -165,7 +219,8 @@
             color: var(--cor-claro);
             text-align: center;
             padding: 2rem 0;
-            margin-top: 50px;
+            margin-top: auto;
+            box-shadow: 0 -2px 5px var(--sombra-media);
         }
 
         footer p {
@@ -189,7 +244,10 @@
             header h1 {
                 font-size: 2rem;
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
 
+            .hero {
+                padding: 3rem 15px;
             }
 
             .hero h2 {
@@ -224,6 +282,15 @@
                 font-size: 1rem;
                 padding: 12px 25px;
             }
+
+            #contato .card {
+                max-width: 90%;
+            }
+
+            .contact-icons a {
+                font-size: 2rem;
+                gap: 15px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -236,12 +303,17 @@
                 padding: 6px 10px;
             }
 
-            .hero {
-                padding: 3rem 15px;
-            }
-
             .hero h2 {
                 font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .cta-button {
+                padding: 8px 15px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -270,17 +342,16 @@
         <section id="cursos" class="container">
             <div class="card">
                 <div class="icon">💡</div>
-                <h3>Desenvolvimento Web</h3>
-                <p>Aprenda a construir sites e aplicações incríveis do zero ao avançado, com as tecnologias mais
-                    recentes.</p>
+                <h3>Segurança Digital</h3>
+                <p>Aprenda a identificar e se proteger contra ameaças online, como phishing, golpes e malwares.</p>
             </div>
             <div class="card">
                 <div class="icon">💻</div>
                 <h3>Desenvolvimento Web</h3>
-                <p>Métodos utilizados para o Desenvolvimento do site</p>
-            </div>
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="desenvolvimento.html" class="botao-link">Conheça</a>
+                <p>Explore os métodos e tecnologias utilizadas para construir e manter sites modernos e seguros.</p>
+                <p>
+                    <a href="desenvolvimento.html" class="cta-button">Ver Mais sobre Desenvolvimento</a>
+                </p>
             </div>
         </section>
 
@@ -298,22 +369,20 @@
             <div class="card" style="flex: 1 1 100%;">
                 <h3>Entre em Contato</h3>
                 <p>Tem dúvidas ou sugestões? Adoraríamos ouvir você!</p>
-                <p>Email: kleysonwork@hotmail.com</p>
+                <p>Email: <a href="mailto:kleysonwork@hotmail.com">kleysonwork@hotmail.com</a></p>
                 <p>Siga-nos nas redes sociais!</p>
-                <icon class="icon">📧</icon>
-                <icon class="icon">📱</icon>
-                <icon class="icon">🌐</icon>
-
+                <div class="contact-icons">
+                    <a href="mailto:kleysonwork@hotmail.com" target="_blank" aria-label="Enviar e-mail"><i class="bi bi-envelope-fill"></i></a>
+                    <a href="www.linkedin.com/in/kleyson-renato-479174297" target="_blank" aria-label="Nosso LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
+        <p>&copy; 2024 Phishing - Desenvolvido por Kleyson</p>
+    </footer>
 
-        </p>
-        <footer>
-            <p>Desenvolvimento feito por Kleyson</p>
-        </footer>
 </body>
 
 </html>
