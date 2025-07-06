@@ -117,7 +117,7 @@
             border-radius: 8px;
             margin-bottom: 20px;
             box-shadow: 0 2px 8px var(--sombra-leve);
-            display: none; /* Inicia oculto, só aparece se houver imagem */
+            display: none;
         }
 
         .quiz-options {
@@ -386,9 +386,9 @@
     </footer>
 
     <script>
-
         const questions = [
             {
+                image: 'https://github.com/kleysonRenato/Site/blob/main/imagens%20de%20phishing/imagensquiz1.png.png?raw=true',
                 question: "Esta imagem é um exemplo de phishing. Qual elemento nela indica ser uma tentativa de golpe?",
                 options: [
                     "A presença do logo do banco, indicando legitimidade.",
@@ -409,7 +409,7 @@
                     "Um método para acelerar a conexão com a internet."
                 ],
                 correctAnswer: "Um tipo de ataque cibernético que tenta enganar vítimas para obter informações confidenciais.",
-                image: null 
+                image: null
             },
             {
                 question: "Qual característica é um sinal comum de um e-mail de phishing?",
@@ -597,7 +597,8 @@
         const finalScoreElement = document.getElementById('final-score');
         const maxScoreElement = document.getElementById('max-score');
         const restartButton = document.getElementById('restart-button');
-        const questionImageElement = document.getElementById('question-image'
+        const questionImageElement = document.getElementById('question-image');
+
         totalQuestionsElement.textContent = questions.length;
         maxScoreElement.textContent = questions.length;
 
@@ -610,16 +611,15 @@
 
             if (currentQuestionIndex < questions.length) {
                 const currentQuestion = questions[currentQuestionIndex];
-                currentQuestionNumberElement.textContent = currentQuestionIndex + 1; 
-                questionTextElement.textContent = currentQuestion.question; 
+                currentQuestionNumberElement.textContent = currentQuestionIndex + 1;
+                questionTextElement.textContent = currentQuestion.question;
 
-            
                 if (currentQuestion.image) {
                     questionImageElement.src = currentQuestion.image;
-                    questionImageElement.style.display = 'block'; 
+                    questionImageElement.style.display = 'block';
                 } else {
-                    questionImageElement.src = ''; /
-                    questionImageElement.style.display = 'none'; 
+                    questionImageElement.src = '';
+                    questionImageElement.style.display = 'none';
                 }
 
                 currentQuestion.options.forEach(option => {
@@ -635,16 +635,16 @@
         }
 
         function selectOption(selectedButton, selectedAnswer, correctAnswer) {
-            if (answeredThisQuestion) return; 
+            if (answeredThisQuestion) return;
             answeredThisQuestion = true;
 
             const allOptionButtons = optionsContainer.querySelectorAll('.option-button');
             allOptionButtons.forEach(button => {
-                button.classList.add('disabled'); 
+                button.classList.add('disabled');
                 if (button.textContent === correctAnswer) {
-                    button.classList.add('correct'); 
+                    button.classList.add('correct');
                 } else if (button === selectedButton) {
-                    button.classList.add('incorrect'); 
+                    button.classList.add('incorrect');
                 }
             });
 
@@ -659,26 +659,26 @@
                 feedbackMessage.classList.add('erro');
             }
             scoreElement.textContent = `Pontuação: ${score}`;
-            nextButton.classList.remove('hidden'); 
+            nextButton.classList.remove('hidden');
         }
 
         function showEndScreen() {
             quizScreen.style.display = 'none';
-            endScreen.style.display = 'block'; 
-            finalScoreElement.textContent = score; 
+            endScreen.style.display = 'block';
+            finalScoreElement.textContent = score;
         }
 
         function restartQuiz() {
-            currentQuestionIndex = 0; 
-            score = 0; 
+            currentQuestionIndex = 0;
+            score = 0;
             scoreElement.textContent = `Pontuação: ${score}`;
             quizScreen.style.display = 'block';
-            endScreen.style.display = 'none'; 
-            loadQuestion(); 
+            endScreen.style.display = 'none';
+            loadQuestion();
         }
 
         nextButton.addEventListener('click', () => {
-            currentQuestionIndex++; 
+            currentQuestionIndex++;
             loadQuestion();
         });
 
