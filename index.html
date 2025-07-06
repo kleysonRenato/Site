@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,10 @@
     <style>
         /* Estilos CSS */
         :root {
-            --cor-primaria: #007BFF; /* Azul */
-            --cor-secundaria: #28A745; /* Verde */
+            --cor-primaria: #007BFF;
+            /* Azul */
+            --cor-secundaria: #28A745;
+            /* Verde */
             --cor-texto: #333;
             --cor-fundo: #f8f9fa;
             --cor-claro: #fff;
@@ -43,7 +46,8 @@
         }
 
         nav {
-            background-color: #343a40; /* Cinza escuro para navegação */
+            background-color: #343a40;
+            /* Cinza escuro para navegação */
             padding: 1rem 0;
             text-align: center;
             box-shadow: 0 2px 5px var(--sombra-leve);
@@ -55,7 +59,8 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas pequenas */
+            flex-wrap: wrap;
+            /* Permite que os itens quebrem a linha em telas pequenas */
         }
 
         nav ul li {
@@ -77,7 +82,8 @@
         }
 
         .hero {
-            background: linear-gradient(to right, var(--cor-primaria), #6c757d); /* Gradiente de azul para cinza */
+            background: linear-gradient(to right, var(--cor-primaria), #6c757d);
+            /* Gradiente de azul para cinza */
             color: var(--cor-claro);
             text-align: center;
             padding: 4rem 20px;
@@ -108,7 +114,8 @@
         }
 
         .cta-button:hover {
-            background-color: #218838; /* Verde mais escuro */
+            background-color: #218838;
+            /* Verde mais escuro */
             transform: translateY(-3px);
         }
 
@@ -118,7 +125,8 @@
             padding: 0 20px;
             display: flex;
             flex-wrap: wrap;
-            gap: 25px; /* Espaço entre os cards */
+            gap: 25px;
+            /* Espaço entre os cards */
             justify-content: center;
         }
 
@@ -127,9 +135,12 @@
             border-radius: 10px;
             box-shadow: 0 4px 10px var(--sombra-leve);
             padding: 25px;
-            flex: 1; /* Permite que os cards cresçam e encolham */
-            min-width: 280px; /* Largura mínima para o card */
-            max-width: 380px; /* Largura máxima para controle */
+            flex: 1;
+            /* Permite que os cards cresçam e encolham */
+            min-width: 280px;
+            /* Largura mínima para o card */
+            max-width: 380px;
+            /* Largura máxima para controle */
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -170,13 +181,18 @@
             font-size: 0.9rem;
         }
 
-        /* Animação */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        /* Responsividade */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2rem;
@@ -191,7 +207,7 @@
             }
 
             nav ul {
-                flex-direction: column; /* Itens do menu empilhados */
+                flex-direction: column;
                 gap: 10px;
             }
 
@@ -200,14 +216,14 @@
             }
 
             .container {
-                flex-direction: column; /* Cards empilhados */
+                flex-direction: column;
                 align-items: center;
                 padding: 0 15px;
             }
 
             .card {
-                max-width: 90%; /* Ocupa mais largura em telas pequenas */
-                margin-bottom: 20px; /* Espaço entre os cards empilhados */
+                max-width: 90%;
+                margin-bottom: 20px;
             }
 
             .cta-button {
@@ -236,16 +252,17 @@
         }
     </style>
 </head>
+
 <body>
     <header>
-        <h1>Aprenda Conosco</h1>
-        <p>Seu Caminho para o Conhecimento Contínuo</p>
+        <h1>Phishing/h1>
+        <p>Seu guia contra os perigos da internet</p>
     </header>
 
     <nav>
         <ul>
             <li><a href="#inicio">Início</a></li>
-            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#cursos">Jogos</a></li>
             <li><a href="#sobre">Sobre Nós</a></li>
             <li><a href="#contato">Contato</a></li>
         </ul>
@@ -254,47 +271,31 @@
     <main>
         <section id="inicio" class="hero">
             <h2>Transforme seu Futuro com o Aprendizado</h2>
-            <p>Descubra uma vasta gama de cursos e recursos projetados para impulsionar sua carreira e seu desenvolvimento pessoal. Comece sua jornada hoje!</p>
-            <a href="#cursos" class="cta-button">Ver Cursos Agora</a>
+            <p>Descubra com um jogo interativo, todos os perigos que rondam a internet</p>
+            <a href="#cursos" class="cta-button">Comece</a>
         </section>
 
         <section id="cursos" class="container">
             <div class="card">
                 <div class="icon">💡</div>
                 <h3>Desenvolvimento Web</h3>
-                <p>Aprenda a construir sites e aplicações incríveis do zero ao avançado, com as tecnologias mais recentes.</p>
-            </div>
-            <div class="card">
-                <div class="icon">📊</div>
-                <h3>Análise de Dados</h3>
-                <p>Domine a arte de extrair insights valiosos de dados e tome decisões mais inteligentes para seu negócio.</p>
-            </div>
-            <div class="card">
-                <div class="icon">🎨</div>
-                <h3>Design Gráfico</h3>
-                <p>Explore sua criatividade e aprenda a criar designs visuais impactantes para diversas plataformas.</p>
-            </div>
-            <div class="card">
-                <div class="icon">📈</div>
-                <h3>Marketing Digital</h3>
-                <p>Conquiste o mundo online com estratégias de marketing digital eficazes e alcance seu público-alvo.</p>
-            </div>
-            <div class="card">
-                <div class="icon">🗣️</div>
-                <h3>Idiomas</h3>
-                <p>Aprenda novos idiomas com métodos práticos e imersivos, abrindo portas para novas culturas e oportunidades.</p>
+                <p>Aprenda a construir sites e aplicações incríveis do zero ao avançado, com as tecnologias mais
+                    recentes.</p>
             </div>
             <div class="card">
                 <div class="icon">💻</div>
-                <h3>Programação</h3>
-                <p>Do básico ao avançado, aprenda as linguagens de programação mais requisitadas do mercado e construa seu futuro.</p>
+                <h3>Como foi desenvolvido</h3>
+                <p>Métodos utilizados para o Desenvolvimento do site</p>
             </div>
         </section>
 
         <section id="sobre" class="container">
             <div class="card" style="flex: 1 1 100%;">
                 <h3>Sobre Nós</h3>
-                <p>No "Aprenda Conosco", acreditamos que o conhecimento é a chave para o progresso. Nossa missão é democratizar o acesso à educação de qualidade, oferecendo cursos práticos e acessíveis, ministrados por especialistas. Nosso objetivo é capacitar indivíduos a alcançar seu pleno potencial, fornecendo as ferramentas e o suporte necessários para o sucesso em um mundo em constante mudança.</p>
+                <p>No "Aprenda Conosco", acreditamos que o conhecimento é a chave para o progresso. Nossa missão é
+                    democratizar o acesso à educação de qualidade, oferecendo cursos práticos e acessíveis, ministrados
+                    por especialistas. Nosso objetivo é capacitar indivíduos a alcançar seu pleno potencial, fornecendo
+                    as ferramentas e o suporte necessários para o sucesso em um mundo em constante mudança.</p>
             </div>
         </section>
 
@@ -313,4 +314,5 @@
         <p>&copy; 2024 Aprenda Conosco. Todos os direitos reservados.</p>
     </footer>
 </body>
+
 </html>
