@@ -104,7 +104,15 @@
         }
 
         .quiz-image {
+            right: auto;
+            left: auto;
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            margin-bottom: 20px;
             display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .quiz-options {
