@@ -386,19 +386,19 @@
     </footer>
 
     <script>
-        {
-            image: 'https://github.com/kleysonRenato/Site/blob/main/imagens%20de%20phishing/imagensquiz1.png.png?raw=true', // <-- Adicionei uma vírgula aqui
-                question: "Nova pergunta com imagem local.",
-                    options: [
-                        "Opção 1",
-                        "Opção 2",
-                        "Opção 3",
-                        "Opção 4",
-                        "Opção 5"
-                    ],
-                        correctAnswer: "Resposta correta." // Removi a vírgula extra no final, não é um erro mas é bom praticar
-        }, // Lembre-se de adicionar a vírgula se houver mais perguntas depois desta
         const questions = [
+            {
+                image: 'https://github.com/kleysonRenato/Site/blob/main/imagens%20de%20phishing/imagensquiz1.png.png?raw=true',
+                question: "Nova pergunta com imagem local.",
+                options: [
+                    "Opção 1",
+                    "Opção 2",
+                    "Opção 3",
+                    "Opção 4",
+                    "Opção 5"
+                ],
+                correctAnswer: "Resposta correta."
+            },
             {
                 question: "O que é phishing?",
                 options: [
@@ -409,7 +409,7 @@
                     "Um método para acelerar a conexão com a internet."
                 ],
                 correctAnswer: "Um tipo de ataque cibernético que tenta enganar vítimas para obter informações confidenciais.",
-                image: null // Corrigido: Removido o '/'
+                image: null
             },
             {
                 question: "Esta imagem representa um cenário comum em ataques de phishing. Qual elemento dela indica ser uma tentativa de golpe?",
