@@ -1,166 +1,86 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desenvolvimento</title>
+    <title>Aprenda Conosco - Desenvolvimento e Segurança</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <style>
-        /* Seus estilos CSS atuais */
+        /* Variáveis de cor e sombra para consistência visual */
+        :root {
+            --cor-primaria: #007BFF; /* Azul principal */
+            --cor-secundaria: #28A745; /* Verde de sucesso */
+            --cor-erro: #DC3545; /* Vermelho de erro */
+            --cor-texto: #333; /* Cor principal do texto */
+            --cor-fundo: #f8f9fa; /* Fundo claro da página */
+            --cor-claro: #fff; /* Branco para elementos */
+            --sombra-leve: rgba(0, 0, 0, 0.1); /* Sombra suave */
+            --sombra-media: rgba(0, 0, 0, 0.15); /* Sombra um pouco mais forte */
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6; /* Melhora a legibilidade do texto */
-            color: #333; /* Cor do texto padrão */
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Garante que o footer fique no final */
         }
+
         header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
+            background-color: var(--cor-primaria);
+            color: var(--cor-claro);
+            padding: 1.5rem 0;
             text-align: center;
+            box-shadow: 0 2px 5px var(--sombra-media);
         }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            background-color: #343a40; /* Um cinza escuro para a navegação */
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px var(--sombra-media);
+        }
+
         nav ul {
             list-style-type: none;
             padding: 0;
-            margin: 0; /* Remove margem padrão do ul */
-            display: flex; /* Para centralizar os itens de navegação */
-            justify-content: center; /* Centraliza horizontalmente */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+            gap: 20px; /* Espaço entre os itens da nav */
         }
-        nav ul li {
-            /* display: inline; */ /* Removido em favor de flexbox no ul */
-            margin: 0 20px; /* Margem entre os itens */
-        }
+
         nav ul li a {
-            color: white;
+            color: var(--cor-claro);
             text-decoration: none;
-            font-weight: bold; /* Deixa os links mais destacados */
-            padding: 5px 10px; /* Um pouco de padding para área de clique */
-            transition: background-color 0.3s ease; /* Transição suave no hover */
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
+
         nav ul li a:hover {
-            background-color: #5cb85c; /* Cor mais clara no hover */
-            border-radius: 4px; /* Cantos arredondados no hover */
+            background-color: var(--cor-primaria); /* Usa a cor primária no hover */
+            transform: translateY(-2px);
         }
+
         main {
-            padding: 20px;
-            max-width: 960px; /* Limita a largura do conteúdo principal */
-            margin: 20px auto; /* Centraliza o main na página */
-            background-color: #fff; /* Fundo branco para o conteúdo */
-            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra suave para destacar */
-            border-radius: 8px; /* Cantos arredondados */
-        }
-        section {
-            margin-bottom: 30px; /* Aumenta a margem entre as seções */
-            padding: 20px;
-            border-bottom: 1px solid #eee; /* Linha divisória suave */
-        }
-        section:last-child {
-            border-bottom: none; /* Remove a linha da última seção */
-            margin-bottom: 0;
-        }
-        h2 {
-            color: #4CAF50;
-            border-bottom: 2px solid #4CAF50; /* Sublinhado para títulos de seção */
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            text-align: center;
-            font-size: 2.2em; /* Títulos maiores */
-        }
-        h3 {
-            color: #333;
-            font-size: 1.5em;
-            margin-top: 25px;
-            margin-bottom: 15px;
-        }
-        p {
-            margin-bottom: 10px;
-            text-align: justify; /* Justifica o texto para melhor leitura */
-        }
-        .contact-info {
-            text-align: center; /* Centraliza o texto de contato */
-        }
-        /* Estilos adicionais para o card de contato, se desejar um */
-        .card {
-            background-color: #f9f9f9;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            max-width: 400px;
-            margin: 20px auto; /* Centraliza o card */
-        }
-        .card h3 {
-            color: #4CAF50;
-            margin-top: 0;
-            text-align: center;
-        }
-        .card p {
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Aprenda Conosco</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#phishing-info">Sobre Phishing</a></li> <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="home">
-            <h2>Bem-vindo ao Aprenda Conosco!</h2>
-            <p>Seu portal para aprender sobre desenvolvimento web e, mais importante, como navegar na internet com segurança. Aqui, transformamos informações complexas em conhecimento acessível e prático para todos.</p>
-            <p>Nossa missão é equipar você com as ferramentas e o entendimento necessários para proteger seus dados e sua privacidade online. Explore nossos conteúdos e comece sua jornada para se tornar um usuário mais consciente e seguro.</p>
-        </section>
-
-        <section id="phishing-info">
-            <h2>Pronto para Testar Seus Conhecimentos?</h2>
-            <p>Um dos maiores perigos na internet hoje é o **phishing**. Você sabe identificar um e-mail falso? Consegue reconhecer um site malicioso? Muitas vezes, esses ataques são tão bem elaborados que é difícil distingui-los de comunicações legítimas.</p>
-            
-            <h3>O que é Phishing?</h3>
-            <p>Phishing é uma técnica fraudulenta usada por cibercriminosos para enganar indivíduos e obter informações confidenciais, como senhas, números de cartão de crédito e dados bancários. Isso é feito disfarçando-se como uma entidade confiável (banco, empresa de e-commerce, governo, etc.) através de e-mails, mensagens de texto (SMS), chamadas telefônicas ou sites falsos.</p>
-
-            <h3>Por Que o Phishing é Perigoso?</h3>
-            <p>Um único clique errado ou a inserção de dados em um site falso pode resultar em roubo de identidade, perdas financeiras, comprometimento de contas pessoais e até danos à reputação. Os golpistas estão sempre aprimorando suas técnicas, tornando essencial que você esteja sempre um passo à frente.</p>
-
-            <h3>O Que Você Vai Aprender no Quiz?</h3>
-            <p>Nosso quiz interativo foi cuidadosamente elaborado para testar sua capacidade de identificar diferentes tipos de ataques de phishing. Você será desafiado a:</p>
-            <ul>
-                <li>Reconhecer sinais de alerta em e-mails e mensagens suspeitas.</li>
-                <li>Analisar URLs e domínios falsos.</li>
-                <li>Compreender táticas comuns usadas por golpistas.</li>
-                <li>Saber a melhor ação a tomar diante de uma tentativa de phishing.</li>
-            </ul>
-            <p>Ao final do quiz, você não apenas terá testado seus conhecimentos, mas também terá aprendido dicas valiosas para se proteger e proteger aqueles ao seu redor. Prepare-se para afiar suas habilidades de detecção!</p>
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="quiz.html" class="botao-link">Começar o Quiz Agora!</a>
-            </div>
-        </section>
-
-        <section id="sobre">
-            <h2>Sobre Nós</h2>
-            <p>Somos uma equipe dedicada a compartilhar conhecimento sobre desenvolvimento web, segurança digital e as melhores práticas para navegar na internet de forma segura. Acreditamos que a educação é a chave para um ambiente digital mais protegido para todos.</p>
-            <p>Nossa paixão é simplificar conceitos complexos e criar conteúdos que realmente ajudem você a entender e aplicar medidas de segurança em seu dia a dia.</p>
-        </section>
-
-        <section id="contato">
-            <h2>Contato</h2>
-            <div class="card">
-                <h3>Entre em Contato</h3>
-                <p>Tem dúvidas ou sugestões? Adoraríamos ouvir você!</p>
-                <p>Email: <a href="mailto:kleysonwork@hotmail.com">kleysonwork@hotmail.com</a></p>
-                <p>Siga-nos nas redes sociais!</p>
-                <div class="contact-icons">
-                    <a href="mailto:kleysonwork@hotmail.com" target="_blank" aria-label="Enviar e-mail">
-                        <i class="bi bi-envelope"></i>
-                    </a>
-                    </div>
-            </div>
-        </section>
-    </main>
-    </body>
-</html>
+            flex-grow: 1; /* Faz o main ocupar o espaço restante */
+            max-width: 960px; /* Largura máxima do conteúdo */
+            margin: 30px auto; /* Margem e centralização */
+            padding: 30px;
+            background-color: var(--cor-claro);
+            border-radius
