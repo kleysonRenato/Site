@@ -105,12 +105,11 @@
 
         .quiz-image {
             max-width: 100%;
-            max-height: 300px;
-            object-fit: contain;
+            height: auto;
+            border-radius: 8px;
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            box-shadow: 0 2px 8px var(--sombra-leve);
+            display: none;
         }
 
         .quiz-options {
@@ -253,7 +252,7 @@
             margin: 0;
             font-size: 0.9rem;
         }
-        
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2rem;
@@ -309,7 +308,7 @@
                 font-size: 1.1rem;
             }
         }
-        
+
 
         @media (max-width: 480px) {
             header h1 {
@@ -330,4 +329,3 @@
                 padding: 10px 12px;
             }
         }
-
