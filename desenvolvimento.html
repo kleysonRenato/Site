@@ -8,15 +8,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
+        /* Variáveis de cor e sombra para consistência visual */
         :root {
-            --cor-primaria: #007BFF; 
-            --cor-secundaria: #28A745; 
-            --cor-erro: #DC3545; 
-            --cor-texto: #333; 
-            --cor-fundo: #f8f9fa;
-            --cor-claro: #fff; 
-            --sombra-leve: rgba(0, 0, 0, 0.1); 
-            --sombra-media: rgba(0, 0, 0, 0.15); 
+            --cor-primaria: #007BFF; /* Azul principal */
+            --cor-secundaria: #28A745; /* Verde de sucesso */
+            --cor-erro: #DC3545; /* Vermelho de erro */
+            --cor-texto: #333; /* Cor principal do texto */
+            --cor-fundo: #f8f9fa; /* Fundo claro da página */
+            --cor-claro: #fff; /* Branco para elementos */
+            --sombra-leve: rgba(0, 0, 0, 0.1); /* Sombra suave */
+            --sombra-media: rgba(0, 0, 0, 0.15); /* Sombra um pouco mais forte */
         }
 
         body {
@@ -28,7 +29,7 @@
             line-height: 1.6;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; 
+            min-height: 100vh; /* Garante que o footer fique no final */
         }
 
         header {
@@ -46,7 +47,7 @@
         }
 
         nav {
-            background-color: #343a40; 
+            background-color: #343a40; /* Um cinza escuro para a navegação */
             padding: 1rem 0;
             box-shadow: 0 2px 5px var(--sombra-media);
         }
@@ -57,8 +58,8 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; 
-            gap: 20px; 
+            flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+            gap: 20px; /* Espaço entre os itens da nav */
         }
 
         nav ul li a {
@@ -72,14 +73,293 @@
         }
 
         nav ul li a:hover {
-            background-color: var(--cor-primaria);
+            background-color: var(--cor-primaria); /* Usa a cor primária no hover */
             transform: translateY(-2px);
         }
 
         main {
-            flex-grow: 1; 
-            max-width: 960px; 
-            margin: 30px auto;
+            flex-grow: 1; /* Faz o main ocupar o espaço restante */
+            max-width: 960px; /* Largura máxima do conteúdo */
+            margin: 30px auto; /* Margem e centralização */
             padding: 30px;
             background-color: var(--cor-claro);
-            border-radius
+            border-radius: 10px;
+            box-shadow: 0 4px 15px var(--sombra-leve);
+        }
+
+        section {
+            margin-bottom: 40px; /* Mais espaço entre as seções */
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee; /* Divisória suave */
+        }
+
+        section:last-of-type { /* Seleciona a última seção no main */
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        h2 {
+            color: var(--cor-primaria);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--cor-primaria);
+        }
+
+        h3 {
+            color: var(--cor-texto);
+            font-size: 1.8rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--cor-secundaria); /* Detalhe lateral */
+            padding-left: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Estilo do botão de link (reutilizado do quiz) */
+        .botao-link {
+            background-color: var(--cor-primaria);
+            color: var(--cor-claro);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 8px var(--sombra-leve);
+        }
+
+        .botao-link:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .botao-link:active {
+            background-color: #004085;
+            transform: translateY(0);
+            box-shadow: 0 2px 4px var(--sombra-leve);
+        }
+
+        /* Estilos da seção de contato (ajustados para a nova estética) */
+        .contact-card { /* Renomeei de 'card' para evitar conflitos se você tiver outros 'card' genéricos */
+            background-color: var(--cor-fundo); /* Fundo claro para o card de contato */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px var(--sombra-leve);
+            margin: 20px auto;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            color: var(--cor-primaria);
+            margin-top: 0;
+            font-size: 2rem; /* Título do card maior */
+            border-left: none; /* Remove borda lateral para centralizar */
+            padding-left: 0;
+        }
+
+        .contact-card p {
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .contact-icons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            font-size: 2.5rem; /* Ícones maiores */
+        }
+
+        .contact-icons a {
+            color: var(--cor-texto);
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .contact-icons a:hover {
+            color: var(--cor-primaria);
+            transform: translateY(-4px);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--cor-texto); /* Cor escura do texto para o fundo do rodapé */
+            color: var(--cor-claro);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: auto; /* Empurra o footer para o final da página */
+            box-shadow: 0 -2px 5px var(--sombra-media);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Media Queries para Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+
+            main {
+                margin: 20px 15px;
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            .botao-link {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+
+            .contact-card {
+                padding: 20px;
+            }
+
+            .contact-icons {
+                font-size: 2rem;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+                padding: 6px 10px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .botao-link {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aprenda Conosco</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#phishing-info">Sobre Phishing</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>Bem-vindo ao Aprenda Conosco!</h2>
+            <p>Seu portal para aprender sobre desenvolvimento web e, mais importante, como navegar na internet com segurança. Aqui, transformamos informações complexas em conhecimento acessível e prático para todos.</p>
+            <p>Nossa missão é equipar você com as ferramentas e o entendimento necessários para proteger seus dados e sua privacidade online. Explore nossos conteúdos e comece sua jornada para se tornar um usuário mais consciente e seguro.</p>
+        </section>
+
+        <section id="phishing-info">
+            <h2>Pronto para Testar Seus Conhecimentos?</h2>
+            <p>Um dos maiores perigos na internet hoje é o **phishing**. Você sabe identificar um e-mail falso? Consegue reconhecer um site malicioso? Muitas vezes, esses ataques são tão bem elaborados que é difícil distingui-los de comunicações legítimas.</p>
+
+            <h3>O que é Phishing?</h3>
+            <p>Phishing é uma técnica fraudulenta usada por cibercriminosos para enganar indivíduos e obter informações confidenciais, como senhas, números de cartão de crédito e dados bancários. Isso é feito disfarçando-se como uma entidade confiável (banco, empresa de e-commerce, governo, etc.) através de e-mails, mensagens de texto (SMS), chamadas telefônicas ou sites falsos.</p>
+
+            <h3>Por Que o Phishing é Perigoso?</h3>
+            <p>Um único clique errado ou a inserção de dados em um site falso pode resultar em roubo de identidade, perdas financeiras, comprometimento de contas pessoais e até danos à reputação. Os golpistas estão sempre aprimorando suas técnicas, tornando essencial que você esteja sempre um passo à frente.</p>
+
+            <h3>O Que Você Vai Aprender no Quiz?</h3>
+            <ul>
+                <li>Reconhecer sinais de alerta em e-mails e mensagens suspeitas.</li>
+                <li>Analisar URLs e domínios falsos.</li>
+                <li>Compreender táticas comuns usadas por golpistas.</li>
+                <li>Saber a melhor ação a tomar diante de uma tentativa de phishing.</li>
+            </ul>
+            <p>Ao final do quiz, você não apenas terá testado seus conhecimentos, mas também terá aprendido dicas valiosas para se proteger e proteger aqueles ao seu redor. Prepare-se para afiar suas habilidades de detecção!</p>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="quiz.html" class="botao-link">Começar o Quiz Agora!</a>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre Nós</h2>
+            <p>Somos uma equipe dedicada a compartilhar conhecimento sobre desenvolvimento web, segurança digital e as melhores práticas para navegar na internet de forma segura. Acreditamos que a educação é a chave para um ambiente digital mais protegido para todos.</p>
+            <p>Nossa paixão é simplificar conceitos complexos e criar conteúdos que realmente ajudem você a entender e aplicar medidas de segurança em seu dia a dia.</p>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <div class="contact-card">
+                <h3>Entre em Contato</h3>
+                <p>Tem dúvidas ou sugestões? Adoraríamos ouvir você!</p>
+                <p>Email: <a href="mailto:kleysonwork@hotmail.com">kleysonwork@hotmail.com</a></p>
+                <p>Siga-nos nas redes sociais!</p>
+                <div class="contact-icons">
+                    <a href="mailto:kleysonwork@hotmail.com" target="_blank" aria-label="Enviar e-mail">
+                        <i class="bi bi-envelope"></i>
+                    </a>
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Aprenda Conosco. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
