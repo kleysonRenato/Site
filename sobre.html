@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desenvolvimento</title>
+    <link rel="icon" href="pastaimagens/imagens de phishing/fotomago2.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        :root {
+            --cor-primaria: #007BFF; 
+            --cor-secundaria: #28A745; 
+            --cor-erro: #DC3545;
+            --cor-texto: #333;
+            --cor-fundo: #f8f9fa; 
+            --cor-claro: #fff; 
+            --sombra-leve: rgba(0, 0, 0, 0.1); 
+            --sombra-media: rgba(0, 0, 0, 0.15); 
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--cor-primaria);
+            color: var(--cor-claro);
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px var(--sombra-media);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            background-color: #343a40;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px var(--sombra-media);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px; 
+        }
+
+        nav ul li a {
+            color: var(--cor-claro);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--cor-primaria);
+            transform: translateY(-2px);
+        }
+
+        main {
+            flex-grow: 1; 
+            max-width: 960px; 
+            margin: 30px auto; 
+            padding: 30px;
+            background-color: var(--cor-claro);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px var(--sombra-leve);
+        }
+
+        section {
+            margin-bottom: 40px; 
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        section:last-of-type { 
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        h2 {
+            color: var(--cor-primaria);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--cor-primaria);
+        }
+
+        h3 {
+            color: var(--cor-texto);
+            font-size: 1.8rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--cor-secundaria);
+            padding-left: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        .botao-link {
+            background-color: var(--cor-primaria);
+            color: var(--cor-claro);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 8px var(--sombra-leve);
+        }
+
+        .botao-link:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .botao-link:active {
+            background-color: #004085;
+            transform: translateY(0);
+            box-shadow: 0 2px 4px var(--sombra-leve);
+        }
+
+        .contact-card { 
+            background-color: var(--cor-fundo); 
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px var(--sombra-leve);
+            margin: 20px auto;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            color: var(--cor-primaria);
+            margin-top: 0;
+            font-size: 2rem; 
+            border-left: none; 
+            padding-left: 0;
+        }
+
+        .contact-card p {
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .contact-icons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            font-size: 2.5rem; 
+        }
+
+        .contact-icons a {
+            color: var(--cor-texto);
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .contact-icons a:hover {
+            color: var(--cor-primaria);
+            transform: translateY(-4px);
+        }
+
+        footer {
+            background-color: var(--cor-texto); 
+            color: var(--cor-claro);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: auto;
+            box-shadow: 0 -2px 5px var(--sombra-media);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+
+            main {
+                margin: 20px 15px;
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            .botao-link {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+
+            .contact-card {
+                padding: 20px;
+            }
+
+            .contact-icons {
+                font-size: 2rem;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+                padding: 6px 10px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .botao-link {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML, CSS & JavaScript</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>O Que São HTML, CSS e JavaScript?</h2>
+            <p>HTML, CSS e JavaScript são a espinha dorsal de qualquer página web moderna. Juntos, eles permitem criar experiências digitais ricas, interativas e visualmente atraentes para os usuários.</p>
+            <p>Com HTML você estrutura o conteúdo fundamental de uma página, com CSS você o estiliza e organiza visualmente, e com JavaScript você adiciona dinamismo e interatividade, tornando a página viva e responsiva às ações do usuário.</p>
+        </section>
+
+        <section id="tec-info">
+            <h2>Detalhes Sobre HTML, CSS e JavaScript</h2>
+            
+            <h3>O que é HTML?</h3>
+            <p>HTML (HyperText Markup Language) é a linguagem de marcação padrão para criar e estruturar o conteúdo de páginas web. Ele define elementos como títulos, parágrafos, imagens, links e listas, organizando a informação de forma lógica e acessível.</p>
+
+            <h3>O que é CSS?</h3>
+            <p>CSS (Cascading Style Sheets) é uma linguagem de folha de estilo usada para descrever a apresentação visual de um documento escrito em HTML. Com CSS, você controla cores, fontes, layouts, espaçamentos e a responsividade do design, transformando o conteúdo bruto em uma interface atraente.</p>
+
+            <h3>O que é JavaScript?</h3>
+            <p>JavaScript é uma linguagem de programação leve e interpretada, essencial para implementar funcionalidades complexas e interatividade em páginas web. Ela permite manipular o DOM (Document Object Model), responder a eventos do usuário, fazer requisições a servidores e muito mais, proporcionando uma experiência dinâmica ao visitante.</p>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <div class="contact-card">
+                <h3>Entre em Contato</h3>
+                <p>Tem dúvidas ou sugestões? Adoraríamos ouvir você!</p>
+                <p>Email: <a href="#">kleysonwork@hotmail.com</a></p>
+                <p>Siga-nos nas redes sociais!</p>
+                <div class="contact-icons">
+                    <a href="mailto:kleysonwork@hotmail.com" target="_blank" aria-label="Enviar e-mail">
+                        <i class="bi bi-envelope-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024. Desenvolvido por Kleyson.</p>
+    </footer>
+
+</body>
+</html>
